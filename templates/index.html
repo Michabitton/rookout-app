@@ -3,14 +3,8 @@
 
 {% block content %}
 {% set name='baz' %}
-<h1>Template</h1>
+<h1><img src="{{ url_for('static', filename='rookout.png') }}" width="50"> WebUi Surfing Spots</h1>
 <ul>
     <li><a href="{{ url_for('surfingSpots') }}">SurfingSpots</a></li>
-    <li>Filter: {{ foo|musical }}</li>
-    <li>Global: {{ bar() }}</li>
-    <li>Test: {% if name is baz %}I am baz.{% endif %}</li>
-    <li>Macro: {{ qux(amount=1) }}</li>
-    <li><a href="{{ url_for('surfing_spots_with_static') }}">SurfingSpots with image and styles.</a></li>
-    <li><a href="{{ url_for('just_flash') }}">Flash something</a></li>
 </ul>
 {% endblock %}

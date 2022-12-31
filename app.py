@@ -29,46 +29,6 @@ def surfingSpots():
 def index():
     return render_template('index.html')
 
-
-# register template context handler
-@app.context_processor
-def inject_info():
-    foo = 'I am foo.'
-    return dict(foo=foo)  # equal to: return {'foo': foo}
-
-
-# register template global function
-@app.template_global()
-def bar():
-    return 'I am bar.'
-
-
-# register template filter
-@app.template_filter()
-def musical(s):
-    return s + Markup(' &#9835;')
-
-
-# register template test
-@app.template_test()
-def baz(n):
-    if n == 'baz':
-        return True
-    return False
-
-
-@app.route('/surfing_spots2')
-def surfing_spots_with_static():
-    return render_template('surfing_spots_with_static.html', user=user, surfing_spots=surfing_spots)
-
-
-# message flashing
-@app.route('/flash')
-def just_flash():
-    flash('I am flash, who is looking for me?')
-    return redirect(url_for('index'))
-
-
 # 404 error handler
 @app.errorhandler(404)
 def page_not_found(e):

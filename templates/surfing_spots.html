@@ -5,8 +5,12 @@
     <title>{{ user.username }}'s SurfingSpots</title>
 </head>
 <body>
-<a href="{{ url_for('index') }}">&larr; Return</a>
-<h2>{{ user.username }} Surfing Spots ({{ surfing_spots|length }})</h2>
+
+<h2>
+    <img src="{{ url_for('static', filename='rookout.png') }}" width="50"> {{ user.username }} Testing {{ user.bio }}:
+</h2>
+
+<h5>{{ user.username }}'s Surfing Spots ({{ surfing_spots|length }}):</h5>
 
 <ul>
     {% for surfing_spot in surfing_spots %}
