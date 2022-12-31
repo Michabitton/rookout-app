@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>{{ user.username }}'s SurfingSpots</title>
+</head>
+<body>
+<a href="{{ url_for('index') }}">&larr; Return</a>
+<h2>{{ user.username }} Surfing Spots ({{ surfing_spots|length }})</h2>
+
+<ul>
+    {% for surfing_spot in surfing_spots %}
+    <li>{{ surfing_spot.name }} - {{ surfing_spot.location }}</li>
+    {% endfor %}
+</ul>
+</body>
+</html>
