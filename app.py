@@ -22,6 +22,7 @@ surfing_spots = [
 
 @app.route('/surfing_spots')
 def surfingSpots():
+    rook.flask.breakpoint(surfing_spots=surfing_spots)
     return render_template('surfing_spots.html', user=user, surfing_spots=surfing_spots)
 
 
